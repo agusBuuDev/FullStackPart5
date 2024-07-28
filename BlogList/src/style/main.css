@@ -1,0 +1,105 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e9fff8;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+li {
+    margin: 5px;
+}
+
+.blog {
+    margin: 25px;
+}
+
+.libutton {
+    margin:5px 10px;
+    padding: 5px;
+    border: solid 1px;
+    border-radius: 0px;
+    background-color: #7fffd4;
+
+}
+.blogdiv{
+    background-color: #cbffeb;
+    padding: 25px;
+    margin: 25px;
+    border-left: double 10px #00ad88;
+}
+
+
+.formBox{
+    display: flex;
+    margin: auto;   
+    background-color: #00ad88;
+    padding: 25px;
+    margin-left: 60px;
+    margin-right: 25px;
+    border-left: double 10px #cbffeb;
+    
+   
+}
+
+.formline{
+    color:#e9fff8;
+    display: flex;
+    justify-content: space-between;
+    margin:5px;
+}
+.formline button{
+    margin-left: 0px;
+}
+.likeicon {
+    width: 25px;
+    margin-bottom: 8px;
+    height: auto;
+    vertical-align: middle;
+}
+a{
+    color: #00ad88;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.logindiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #00ad88;
+    padding: 5px;
+    margin: -10px;
+    
+}
+.logindiv label{
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.error{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 60px;
+    margin-right: 25px;
+    justify-content: center;
+    width: 89%;
+    background-color: rgba(220, 22, 130, 0.048);
+}
+
+.notif{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 60px;
+    margin-right: 25px;
+    justify-content: center;
+    width: 89%;
+    background-color: rgba(33, 165, 110, 0.322);
+}
+.loginError{
+    color: red;
+    text-align: center;
+}
