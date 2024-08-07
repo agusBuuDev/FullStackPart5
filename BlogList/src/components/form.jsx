@@ -1,31 +1,59 @@
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 
 
-const Form = ({ addBlog, title, setTitle, url, setUrl, author, setAuthor, likes, setLikes }) => {
+const Form = ({ creaBlog }) => {
+
+    const [title, setTitle] = useState('')
+    const [url, setUrl] = useState('')
+    const [author, setAuthor] = useState('')
+    const [likes, setLikes] = useState(0)
+
+    const addBlog = (event) => {
+        event.preventDefault() // Evita la recarga de la página
+        console.log(`nuevo blog: ${title}, url: ${url}, author: ${author}, likes: ${likes}`)
+        const newBlog = {
+            title: title,
+            url: url,
+            author: author,
+            likes: likes
+        }
+
+        creaBlog(newBlog)
+        
+
+        setTitle('')
+        setUrl('')
+        setAuthor('')
+        setLikes(0)
+       
+    }
+
+
     return (
         <>
             <div className='formBox'>
                 <form onSubmit={addBlog}>
                     <div className='formline'>
-                    <h2>Agregar un nuevo blog</h2>
+                        <h2>Agregar un nuevo blog</h2>
 
                     </div>
                     <div className='formline'>
-                        <label>Título: </label>
-                        <input type='text' name='title' value={title} onChange={event => setTitle(event.target.value)}></input>
+                        <label htmlFor='title'>Título: </label>
+                        <input id='title'  type='text' name='title' value={title} onChange={event => setTitle(event.target.value)}></input>
                     </div>
 
                     <div className='formline'>
-                        <label>URL: </label>
-                        <input type='text' name='url' value={url} onChange={event => setUrl(event.target.value)}></input>
+                        <label htmlFor='url'>URL: </label>
+                        <input id='url' type='text' name='url' value={url} onChange={event => setUrl(event.target.value)}></input>
                     </div>
                     <div className='formline'>
-                        <label>Author: </label>
-                        <input type="text" name='author' value={author} onChange={event => setAuthor(event.target.value)}></input>
+                        <label htmlFor='author' >Author: </label>
+                        <input id='author' type="text" name='author' value={author} onChange={event => setAuthor(event.target.value)}></input>
                     </div>
                     <div className='formline'>
-                        <label>Likes: </label>
-                        <input type="number" name="likes" value={likes} onChange={event => setLikes(event.target.value)}></input>
+                        <label htmlFor='likes'>Likes: </label>
+                        <input id='likes' type="number" name="likes" value={likes} onChange={event => setLikes(event.target.value)}></input>
                     </div>
 
                     <div className='formline'>
@@ -33,9 +61,9 @@ const Form = ({ addBlog, title, setTitle, url, setUrl, author, setAuthor, likes,
                     </div>
                 </form>
             </div>
-                        
 
-           
+
+
 
         </>
     )
@@ -44,15 +72,8 @@ const Form = ({ addBlog, title, setTitle, url, setUrl, author, setAuthor, likes,
 }
 
 Form.propTypes = {
-    addBlog: PropTypes.func.isRequired, // Debe ser una función y es requerida
-    title: PropTypes.string.isRequired, // Debe ser una cadena y es requerida
-    setTitle: PropTypes.func.isRequired, // Debe ser una función y es requerida
-    url: PropTypes.string.isRequired, // Debe ser una cadena y es requerida
-    setUrl: PropTypes.func.isRequired, // Debe ser una función y es requerida
-    author: PropTypes.string.isRequired, // Debe ser una cadena y es requerida
-    setAuthor: PropTypes.func.isRequired, // Debe ser una función y es requerida
-    likes: PropTypes.number.isRequired, // Debe ser un número y es requerido
-    setLikes: PropTypes.func.isRequired // Debe ser una función y es requerida
+    creaBlog: PropTypes.func.isRequired, // Debe ser una función y es requerida
+    
 }
 
 export default Form

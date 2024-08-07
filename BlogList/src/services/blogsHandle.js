@@ -25,7 +25,8 @@ const create = async (newBlog)=>{
   }
    try{
     return(
-        await axiosInstance.post('/blogs/',newBlog, config)       
+        await axiosInstance.post('/blogs/',newBlog, config)  
+             
     )
    }catch(error) {
     console.error('Error fetching data:', error)
@@ -35,7 +36,10 @@ const create = async (newBlog)=>{
 
 const deletePost = async (id)=>{
  try{
-    await axiosInstance.delete(`/blogs/${id}`)
+  const config = {
+    headers: { Authorization: token },
+  }
+    await axiosInstance.delete(`/blogs/${id}`, config)
  }catch(error){
     console.error('Error al borrar el post: ', error)
  }

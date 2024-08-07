@@ -35,6 +35,7 @@ li {
 .formBox{
     display: flex;
     margin: auto;   
+    margin-top: 25px;
     background-color: #00ad88;
     padding: 25px;
     margin-left: 60px;
@@ -71,7 +72,8 @@ a{
     width: 100%;
     background-color: #00ad88;
     padding: 5px;
-    margin: -10px;
+    margin: -10px -10px 25px -10px;
+  
     
 }
 .logindiv label{
@@ -103,3 +105,48 @@ a{
     color: red;
     text-align: center;
 }
+.toggle {
+    width: 100%;
+    background-color: #00ad8747;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+    position: relative;
+    padding-right: 20px; /* Space for the arrow */
+  }
+  
+  .toggle:after {
+    content: '\25BC'; /* Down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+   
+  .toggleHide{
+    width: 100%;
+    background-color: #00ad8747;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+    position: relative;
+    padding-right: 20px; /* Space for the arrow */
+  }
+  
+  .toggleHide:after {
+    content: '\25B2'; /* Up arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  button {
+    margin:5px 10px;
+    padding: 5px;
+    border: solid 1px;
+    border-radius: 0px;
+    background-color: #7fffd4;
+  }

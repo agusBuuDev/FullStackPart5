@@ -15,8 +15,15 @@ const Notif= ({error, tipoError})=>{
 
 }
 
-Notif.propTypes={
-    error: PropTypes.string.isRequired,
-    tipoError: PropTypes.string.isRequired
-}
+Notif.propTypes = {
+    error: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.oneOf([null])
+    ]),
+    tipoError: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.oneOf([null])
+    ])
+  }
+  
 export default Notif
