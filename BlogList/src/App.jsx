@@ -142,7 +142,7 @@ const likePost = async (blog) => {
 
         </div>
       </Togglable>
-      <div className='blog'></div>
+     
 
       <Togglable buttonLabel='Agregar Blog' ref={togglableRef}>
         <Form creaBlog={creaBlog} loguedUser={loguedUserId} />

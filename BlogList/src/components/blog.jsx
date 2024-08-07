@@ -36,11 +36,10 @@ const Blog = ({ blog, deleteBlog, like }) => {
 
     const displayButton = { display: visibleButton ? '' : 'none' }
 
-    console.log()
 
     return (
-        <div className="blogdiv">
-            <li className='blog' >{blog.title}
+        <div className="blogdiv" id={blog.title}>
+            <li className='blog' id={blog.title}>{blog.title}
 
                 <div>
                     <div style={hideWhenVisible}>
@@ -48,14 +47,14 @@ const Blog = ({ blog, deleteBlog, like }) => {
                     </div>
                     <div style={showWhenVisible}>
                         <button className='toggleHide' onClick={toggleVisibility}>Hide</button>
-                        <ul>
+                        <ul data-testid='lista'>
                             <li data-testid='url'><a href={blog.url}>URL: {blog.url}</a></li>
                             <li data-testid='author'>Author: {blog.author}</li>
                             <li data-testid='user'>User: {blog.user.name}</li>
 
-                            <button style={displayButton} onClick={deleteBlog}>borrar</button>
+                            <button data-testid={`delete-${blog.id}`} style={displayButton} onClick={deleteBlog}>borrar</button>
                             <button data-testid='like' className="libutton" onClick={like}>like</button>
-                            {blog.likes}
+                            <span data-testid={`likes-${blog.title}`}>{blog.likes}</span>
                             <img className='likeicon' src={likeimg} />
 
                         </ul>

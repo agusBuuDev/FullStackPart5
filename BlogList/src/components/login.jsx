@@ -56,9 +56,9 @@ const Login = ({ loguedUser, setLoguedUser, login, error, loginVisible, show, hi
                     <div style={displayForm}>
                         <form onSubmit={localLogin}>
                             <label>Usuario</label>
-                            <input type='text' name='user' value={user} onChange={event => setUser(event.target.value)} />
+                            <input data-testid='user' type='text' name='user' value={user} onChange={event => setUser(event.target.value)} />
                             <label>Contraseña</label>
-                            <input type='password' name='pass' value={pass} onChange={event => setPass(event.target.value)} />
+                            <input data-testid='password' type='password' name='pass' value={pass} onChange={event => setPass(event.target.value)} />
                             <button type='submit' className='libutton'>Login</button>
                         </form>
                         <button className='libutton' onClick={hide}>Cancel</button>
